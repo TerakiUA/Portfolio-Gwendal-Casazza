@@ -1,5 +1,5 @@
 .hero {
-  background: linear-gradient(to right, #2c3e50, #4ca1af);
+  background: linear-gradient(to right, #610808, #b40c0c);
   color: white;
   text-align: center;
   padding: 8em 2em;
@@ -16,7 +16,7 @@
 }
 
 .accent {
-  color: #00bcd4;
+  color: #e85353;
 }
 
 .btn {
