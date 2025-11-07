@@ -15,16 +15,6 @@
   margin-bottom: 1.5em;
 }
 
-header {
-  position: sticky;
-  top: 0;
-  background: #222;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-
-
 .accent {
   color: #00bcd4;
 }
