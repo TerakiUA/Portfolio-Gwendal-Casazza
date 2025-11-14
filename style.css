@@ -167,3 +167,8 @@ section {
 .tab.active {
   display: block;
 }
+
+.nav-bar a {
+  user-select: none; /* impossible de sélectionner le texte */
+  cursor: pointer;   /* curseur type “lien” */
+}
