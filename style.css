@@ -100,7 +100,9 @@ h1, h2, h3 {
 }
 
 .nav-bar a:hover {
-  color: var(--accent-blue);
+  color: var(--accent-red-light); /* rouge clair */
+  text-shadow: 0 0 8px var(--accent-red-light);
+  transition: 0.2s ease-in-out;
 }
 
 /* ----------------------
