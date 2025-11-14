@@ -1,5 +1,43 @@
+/* ----------------------
+    PALETTE DE COULEURS 
+-------------------------*/
+:root {
+  --dark-bg: #0d1117;
+  --dark-bg-alt: #161b22;
+  --text-color: #c9d1d9;
+  --title-color: #f0f6fc;
+
+  --accent-red: #570505;
+  --accent-red-light: #b40c0c;
+
+  --accent-blue: #58a6ff;
+  --border-color: #30363d;
+}
+
+/* ----------------------
+    BASE
+-------------------------*/
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--dark-bg);
+  color: var(--text-color);
+  font-family: 'Fira Code', monospace;
+}
+
+a {
+  color: var(--accent-blue);
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+}
+
+/* ----------------------
+    HERO
+-------------------------*/
 .hero {
-  background: linear-gradient(to right, #610808, #b40c0c);
+  background: linear-gradient(to right, var(--accent-red), var(--accent-red-light));
   color: white;
   text-align: center;
   padding: 8em 2em;
@@ -16,45 +54,43 @@
 }
 
 .accent {
-  color: #000000;
+  color: black;
 }
 
+/* Bouton */
 .btn {
-  background: #570505;
+  background: var(--accent-red);
   color: white;
   padding: 0.8em 1.5em;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  background: #570505;
-}
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f5f5;
-  color: #333;
+  background: var(--accent-red-light);
 }
 
-/* --- Titre du site --- */
+/* ----------------------
+    TITRE FIXE
+-------------------------*/
 .site-title {
   background: #111;
-  color: #570505;
+  color: var(--accent-red);
   text-align: center;
   padding: 1.5em 0;
   font-size: 1.8em;
-  border-bottom: 2px solid #570505;
+  border-bottom: 2px solid var(--accent-red);
 }
 
-/* --- Barre de navigation --- */
+/* ----------------------
+    NAVIGATION STICKY
+-------------------------*/
 .nav-bar {
   background: #222;
   position: sticky;
-  top: 0; /* devient fixe quand elle atteint le haut */
+  top: 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
@@ -75,34 +111,24 @@ body {
 }
 
 .nav-bar a:hover {
-  color: #00bcd4;
+  color: var(--accent-blue);
 }
 
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1em;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-}
-
+/* ----------------------
+    SECTIONS
+-------------------------*/
 section {
   padding: 3em 2em;
-  background: white;
+  background: var(--dark-bg-alt);
   margin: 1em;
   border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: none;
 }
 
-footer {
-  text-align: center;
-  padding: 1em;
-  background: #222;
-  color: white;
-}
+/* ----------------------
+    PROJETS
+-------------------------*/
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -111,18 +137,24 @@ footer {
 }
 
 .project-card {
-  background: #fff;
+  background: var(--dark-bg);
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 1px solid var(--border-color);
   padding: 1.5em;
-  transition: transform 0.2s;
+  transition: 0.2s;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
+  border-color: var(--accent-blue);
 }
+
+/* ----------------------
+    RESPONSIVE
+-------------------------*/
 @media (max-width: 768px) {
-  nav ul {
+
+  .nav-bar nav ul {
     flex-direction: column;
     text-align: center;
   }
@@ -134,24 +166,4 @@ footer {
   .hero-content h1 {
     font-size: 1.8em;
   }
-}
-
-body {
-  background: #0d1117;
-  color: #c9d1d9;
-  font-family: 'Fira Code', monospace;
-}
-
-a {
-  color: #58a6ff;
-}
-
-section {
-  background: #161b22;
-  border: 1px solid #30363d;
-  box-shadow: none;
-}
-
-h1, h2, h3 {
-  color: #f0f6fc;
 }

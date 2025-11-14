@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<header class="hero">
-  <div class="hero-content">
-    <h1>Bonjour, moi c’est <span class="accent">Gwendal</span></h1>
-    <p>Étudiant en BTS SIO option SISR. Passionné par le réseau, le système et de comment son pensé les infrastructures.</p>
-    <a href="#projects" class="btn">Voir mes projets</a>
-  </div>
-</header>
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Brodi</title>
+  <title>Portfolio Gwendal Casazza</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+  <!-- Titre fixe -->
+  <div class="site-title">
+    <h1>Portfolio – Gwendal Casazza</h1>
+  </div>
+
+  <!-- Navigation sticky -->
   <header class="nav-bar">
     <nav>
       <ul>
@@ -29,25 +27,44 @@
     </nav>
   </header>
 
-  <section id="about">
-    <h2>À propos</h2>
-    <p>Étudiant en BTS SIO option SISR, passionné par le développement et les technologies IT.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Salut, moi c’est <span class="accent">Gwendal</span></h1>
+      <p>Étudiant en BTS SIO spécialisé en réseaux & infrastructures, passionné par l’IT.</p>
+      <a href="#projects" class="btn">Voir mes projets</a>
+    </div>
   </section>
 
+  <!-- À propos -->
+  <section id="about">
+    <h2>À propos</h2>
+    <p>
+      Étudiant en BTS SIO option SISR, passionné par les réseaux, l’infrastructure et la cybersécurité.
+      Mon alternance m’a permis d’acquérir des compétences solides en gestion d’équipements Junos
+      et Cisco, en administration système, et en résolution de problèmes techniques.
+    </p>
+  </section>
+
+  <!-- Compétences -->
   <section id="skills">
     <h2>Compétences</h2>
-    <ul>
-      <li>Avec des bases solides en informatique, j'ai acquis des compétences variées en 
+
+    <!-- Description détaillée -->
+    <div class="skill-description">
+      <p>
+        Avec des bases solides en informatique, j'ai acquis des compétences variées en 
         programmation, systèmes d'exploitation, bases de données et sécurité. Mon alternance 
         m'a permis de me spécialiser dans les réseaux, en développant des compétences en gestion,
-        configuration et optimisation des infrastructures réseau. Cette expérience m'a permis de 
-        renforcer ma capacité à résoudre des problèmes techniques complexes et à travailler efficacement 
-        en équipe. J'ai pu explorer plusieurs environnements sur des équipements informatiques tel que 
-        Junos et Cisco. Cela me permet d'être polyvalent en sachant reconnaitre les différences et comment 
-        résoudre les problèmes que ces équipements peuvent rencontrés.</li>
-    </ul>
-    <h2>Skills</h2>
-    <ul>
+        configuration et optimisation des infrastructures réseau.
+        J’ai travaillé sur des équipements Junos et Cisco, ce qui me rend polyvalent et 
+        capable de diagnostiquer différents environnements techniques.
+      </p>
+    </div>
+
+    <!-- Liste technique -->
+    <h3>Skills techniques</h3>
+    <ul class="skill-list">
       <li>HTML / CSS / JavaScript</li>
       <li>Python, PHP, SQL</li>
       <li>Git, Linux</li>
@@ -55,32 +72,38 @@
     </ul>
   </section>
 
-<section id="projects">
-  <h2>Mes Projets</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <h3>Application de gestion</h3>
-      <p>Application Python/Tkinter pour gérer les stocks d’une entreprise.</p>
-    </div>
-    <div class="project-card">
-      <h3>Site vitrine pour un restaurant</h3>
-      <p>Site responsive en HTML/CSS avec formulaire de contact.</p>
-    </div>
-    <div class="project-card">
-      <h3>API météo</h3>
-      <p>Mini projet en JavaScript pour afficher la météo en temps réel.</p>
-    </div>
-  </div>
-</section>
+  <!-- Projets -->
+  <section id="projects">
+    <h2>Mes Projets</h2>
 
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Application de gestion</h3>
+        <p>Application Python/Tkinter pour gérer les stocks d’une entreprise.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Site vitrine</h3>
+        <p>Site web responsive en HTML/CSS pour un restaurant avec formulaire de contact.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Mini API météo</h3>
+        <p>API en JavaScript permettant d’afficher la météo en temps réel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>📧 <a href="mailto:gwendalcasazza@gmail.com">gwendalcasazza@gmail.com</a></p>
-    <p>💼 <a href="https://www.linkedin.com/in/ton-profil" target="_blank">LinkedIn</a></p>
+    <p>📧 <a href="mailto:gwendal@example.com">gwendal@example.com</a></p>
+    <p>💼 <a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Gwendal CASAZZA - Portfolio BTS SIO</p>
+    <p>© 2025 Gwendal Casazza — Portfolio BTS SIO</p>
   </footer>
+
 </body>
 </html>
