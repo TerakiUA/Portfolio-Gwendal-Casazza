@@ -10,59 +10,147 @@
 
 <body>
 
-  <!-- Navigation sticky -->
+  <!-- TITRE FIXE -->
+  <div class="site-title">
+    <h1>Portfolio – Gwendal Casazza</h1>
+  </div>
+
+  <!-- NAVBAR (ONGLETS) -->
   <header class="nav-bar">
     <nav>
       <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="projects.html">Projets</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="veille.html">Veille</a></li>
+        <li><a data-tab="home">Accueil</a></li>
+        <li><a data-tab="projects">Projets</a></li>
+        <li><a data-tab="cv">CV</a></li>
+        <li><a data-tab="veille">Veille</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Bonjour, moi c’est <span class="accent">Gwendal</span></h1>
-      <p>Étudiant en BTS SIO spécialisé en réseaux & infrastructures, passionné par l’IT.</p>
+
+  <!-- ONGLET ACCUEIL (HERO + ABOUT + SKILLS) -->
+  <section id="tab-home" class="tab active">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Salut, moi c’est <span class="accent">Gwendal</span></h1>
+        <p>Étudiant en BTS SIO spécialisé en réseaux & infrastructures, passionné par l’IT.</p>
+        <a href="#" class="btn" data-tab="projects">Voir mes projets</a>
+      </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="about">
+      <h2>À propos</h2>
+      <p>
+        Étudiant en BTS SIO option SISR, passionné par les réseaux, l’infrastructure
+        et la cybersécurité. Mon alternance m’a permis d’acquérir des compétences solides
+        en systèmes, virtualisation, équipements Cisco et Junos, et en résolution de problèmes techniques.
+      </p>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section id="skills">
+      <h2>Compétences</h2>
+
+      <div class="skill-description">
+        <p>
+          Avec des bases solides en informatique, j'ai acquis des compétences variées en 
+          programmation, systèmes d'exploitation, bases de données et sécurité. Mon alternance 
+          m'a permis de me spécialiser dans les réseaux, en développant des compétences en gestion,
+          configuration et optimisation d’infrastructures. J'ai travaillé sur des environnements Cisco
+          et Junos, ce qui me rend polyvalent et efficace dans divers contextes techniques.
+        </p>
+      </div>
+
+      <h3>Skills techniques</h3>
+      <ul class="skill-list">
+        <li>HTML / CSS / JavaScript</li>
+        <li>Python, PHP, SQL</li>
+        <li>Git, Linux</li>
+        <li>Proxmox, Junos, Cisco</li>
+      </ul>
+    </section>
+
+  </section>
+
+
+
+  <!-- ONGLET PROJETS -->
+  <section id="tab-projects" class="tab">
+    <h2>Mes Projets</h2>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Application de gestion</h3>
+        <p>Application Python/Tkinter pour gérer les stocks d’une entreprise.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Site vitrine</h3>
+        <p>Site web responsive en HTML/CSS pour un restaurant.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Mini API météo</h3>
+        <p>API JavaScript permettant d’afficher la météo en temps réel.</p>
+      </div>
     </div>
   </section>
 
-<section id="about">
-  <h2>À propos</h2>
-  <p>
-    Étudiant en BTS SIO option SISR, passionné par les réseaux, l'infrastructure
-    et la cybersécurité. Mon alternance m’a permis d’acquérir des compétences solides
-    en systèmes, virtualisation, équipements Cisco / Junos et résolution de problèmes techniques.
-  </p>
-</section>
 
-<section id="skills">
-  <h2>Compétences</h2>
 
-  <div class="skill-description">
-    <p>
-      Avec des bases solides en informatique, j'ai acquis des compétences variées en 
-      programmation, systèmes d'exploitation, bases de données et sécurité. Mon alternance 
-      m'a permis de me spécialiser dans les réseaux, en développant des compétences en gestion,
-      configuration et optimisation d’infrastructures.
+  <!-- ONGLET CV -->
+  <section id="tab-cv" class="tab">
+    <h2>Mon CV</h2>
+
+    <iframe src="assets/CV_Gwendal.pdf" width="100%" height="600px"></iframe>
+
+    <p style="margin-top:1em;">
+      <a class="btn" href="assets/CV_Gwendal.pdf" download>Télécharger mon CV</a>
     </p>
-  </div>
+  </section>
 
-  <h3>Skills techniques</h3>
-  <ul class="skill-list">
-    <li>HTML / CSS / JavaScript</li>
-    <li>Python, PHP, SQL</li>
-    <li>Git, Linux</li>
-    <li>Proxmox, Junos, Cisco</li>
-  </ul>
-</section>
 
-<!-- Contact en bas -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>📧 <a href="mailto:gwendal@example.com">gwendal@example.com</a></p>
-  <p>💼 <a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
-</section>
+
+  <!-- ONGLET VEILLE TECHNO -->
+  <section id="tab-veille" class="tab">
+    <h2>Veille technologique</h2>
+
+    <p>Voici les articles récents de ma veille techno :</p>
+    <div id="rss-feed">
+      <p>Chargement des articles...</p>
+    </div>
+  </section>
+
+
+
+  <!-- CONTACT GLOBAL -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 <a href="mailto:gwendal@example.com">gwendal@example.com</a></p>
+    <p>💼 <a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
+  </section>
+
+
+
+  <!-- JAVASCRIPT POUR LES ONGLES -->
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const buttons = document.querySelectorAll('[data-tab]');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-tab');
+
+        tabs.forEach(tab => tab.classList.remove('active'));
+        document.getElementById(`tab-${target}`).classList.add('active');
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
