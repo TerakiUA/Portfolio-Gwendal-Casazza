@@ -43,11 +43,11 @@ body {
 /* --- Titre du site --- */
 .site-title {
   background: #111;
-  color: #00bcd4;
+  color: #570505;
   text-align: center;
   padding: 1.5em 0;
   font-size: 1.8em;
-  border-bottom: 2px solid #00bcd4;
+  border-bottom: 2px solid #570505;
 }
 
 /* --- Barre de navigation --- */
