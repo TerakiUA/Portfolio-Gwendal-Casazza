@@ -140,6 +140,26 @@ section {
   border-color: var(--accent-blue);
 }
 
+/* ------------------------------------------------------------------
+Centrage du CV seulement quand l'onglet CV est actif 
+------------------------------------------------------------------*/
+#tab-cv.tab.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical */
+  align-items: center;       /* horizontal */
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* Image du CV */
+.cv-image {
+  width: 70%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1em;
+}
+
 /* ----------------------
     RESPONSIVE
 -------------------------*/
