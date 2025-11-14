@@ -73,18 +73,6 @@ h1, h2, h3 {
 }
 
 /* ----------------------
-    TITRE FIXE
--------------------------*/
-.site-title {
-  background: #111;
-  color: var(--accent-red);
-  text-align: center;
-  padding: 1.5em 0;
-  font-size: 1.8em;
-  border-bottom: 2px solid var(--accent-red);
-}
-
-/* ----------------------
     NAVIGATION STICKY
 -------------------------*/
 .nav-bar {
