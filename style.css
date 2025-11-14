@@ -57,21 +57,6 @@ h1, h2, h3 {
   color: black;
 }
 
-/* Bouton */
-.btn {
-  background: var(--accent-red);
-  color: white;
-  padding: 0.8em 1.5em;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: var(--accent-red-light);
-}
-
 /* ----------------------
     TITRE FIXE
 -------------------------*/
