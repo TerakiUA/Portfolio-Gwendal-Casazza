@@ -10,11 +10,6 @@
 
 <body>
 
-  <!-- TITRE FIXE -->
-  <div class="site-title">
-    <h1>Portfolio – Gwendal Casazza</h1>
-  </div>
-
   <!-- NAVBAR (ONGLETS) -->
   <header class="nav-bar">
     <nav>
@@ -36,7 +31,6 @@
       <div class="hero-content">
         <h1>Salut, moi c’est <span class="accent">Gwendal</span></h1>
         <p>Étudiant en BTS SIO spécialisé en réseaux & infrastructures, passionné par l’IT.</p>
-        <a href="#" class="btn" data-tab="projects">Voir mes projets</a>
       </div>
     </section>
 
@@ -75,7 +69,7 @@
 
   </section>
 
-
+  
 
   <!-- ONGLET PROJETS -->
   <section id="tab-projects" class="tab">
@@ -136,21 +130,29 @@
 
 
   <!-- JAVASCRIPT POUR LES ONGLES -->
-  <script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.tab');
     const buttons = document.querySelectorAll('[data-tab]');
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const target = btn.getAttribute('data-tab');
-
-        tabs.forEach(tab => tab.classList.remove('active'));
-        document.getElementById(`tab-${target}`).classList.add('active');
-        
+    function showTab(target) {
+      tabs.forEach(tab => tab.classList.remove('active'));
+      const el = document.getElementById(`tab-${target}`);
+      if (el) {
+        el.classList.add('active');
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault(); // au cas où il y ait un href plus tard
+        const target = btn.getAttribute('data-tab');
+        showTab(target);
       });
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
