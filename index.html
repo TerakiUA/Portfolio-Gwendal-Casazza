@@ -156,5 +156,41 @@
   });
 </script>
 
+<script>
+  async function loadRSS() {
+    const rssUrl = "https://www.cert.ssi.gouv.fr/feed/"; // mets ton flux ici
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+
+      const container = document.getElementById("rss-feed");
+      container.innerHTML = ""; // reset
+
+      data.items.slice(0, 5).forEach(item => {
+        const article = document.createElement("div");
+        article.classList.add("rss-item");
+
+        article.innerHTML = `
+          <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+          <p>${item.pubDate.split(" ")[0]}</p>
+        `;
+
+        container.appendChild(article);
+      });
+
+    } catch (error) {
+      document.getElementById("rss-feed").innerHTML =
+        "<p>Impossible de charger le flux RSS.</p>";
+    }
+  }
+
+  // Charge le flux quand on ouvre l’onglet Veille
+  document.querySelector('[data-tab="veille"]').addEventListener("click", () => {
+    loadRSS();
+  });
+</script>
+
 </body>
 </html>

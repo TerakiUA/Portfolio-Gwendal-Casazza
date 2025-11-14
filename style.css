@@ -194,3 +194,21 @@ Centrage du CV seulement quand l'onglet CV est actif
   user-select: none; /* impossible de sélectionner le texte */
   cursor: pointer;   /* curseur type “lien” */
 }
+
+.rss-item {
+  background: var(--dark-bg);
+  padding: 1em;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 1em;
+}
+
+.rss-item h3 a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+
+.rss-item h3 a:hover {
+  color: var(--accent-red-light);
+  text-shadow: 0 0 6px var(--accent-red-light);
+}
