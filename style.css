@@ -213,34 +213,42 @@ Centrage du CV seulement quand l'onglet CV est actif
   text-shadow: 0 0 6px var(--accent-red-light);
 }
 
-/* --- NAV BAR WITH LOGO --- */
-
-.nav-bar nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1.5em;
-}
-
+/* Navigation links aligned center */
 .nav-left {
   display: flex;
-  gap: 2em;
   list-style: none;
+  gap: 2em;
   margin: 0;
-  padding: 1em 0;
+  padding: 0;
+  justify-content: center;
 }
 
-.nav-logo {
-  height: 40px;
-  width: auto;
-  filter: brightness(0) invert(1); /* Rend le logo blanc si il est noir */
-  transition: 0.3s;
+.nav-left a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  user-select: none;
   cursor: pointer;
 }
 
+.nav-left a:hover {
+  color: var(--accent-red-light);
+  text-shadow: 0 0 6px var(--accent-red-light);
+  transition: 0.2s;
+}
+
+/* Logo properly aligned */
+.nav-logo {
+  height: 40px;
+  width: auto;
+  cursor: default; /* Pas clic */
+  filter: brightness(0) invert(1);
+  transition: 0.3s;
+}
+
 .nav-logo:hover {
-  filter: drop-shadow(0 0 6px var(--accent-red-light));
   transform: scale(1.05);
+  filter: drop-shadow(0 0 6px var(--accent-red-light));
 }
 
 @media (max-width: 768px) {
@@ -248,4 +256,21 @@ Centrage du CV seulement quand l'onglet CV est actif
     flex-direction: column;
     gap: 1em;
   }
+}
+
+/* ===== NAVBAR FIX ===== */
+.nav-bar {
+  background: #222;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  padding: 0.5em 1.5em;
+}
+
+/* Container flex horizontal */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Left links / Right logo */
 }
