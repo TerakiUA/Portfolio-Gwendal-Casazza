@@ -10,36 +10,29 @@
 
 <body>
 
-  <!-- NAVBAR (ONGLETS) -->
+  <!-- NAVBAR -->
   <header class="nav-bar">
-    <nav class="nav-container">
-        <li><a data-tab="home">Accueil</a></li>
-        <li><a data-tab="entreprise">Entreprise</a></li>
-        <li><a data-tab="cv">CV</a></li>
-        <li><a data-tab="veille">Veille Technologique</a></li>
+    <nav>
+      <ul>
+        <li><a href="#" data-tab="home">Accueil</a></li>
+        <li><a href="#" data-tab="projects">Projets</a></li>
+        <li><a href="#" data-tab="cv">CV</a></li>
+        <li><a href="#" data-tab="veille">Veille</a></li>
       </ul>
     </nav>
   </header>
 
-  
-   <!-- LOGO À DROITE -->
-    <img src="assets/freepro.png" alt="Logo" class="nav-logo">
-  </nav>
-</header>
 
-
-  <!-- ONGLET ACCUEIL (HERO + ABOUT + SKILLS) -->
+  <!-- ACCUEIL -->
   <section id="tab-home" class="tab active">
 
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-content">
-        <h1>Bonjour, moi c’est <span class="accent">Gwendal</span></h1>
+        <h1>Salut, moi c’est <span class="accent">Gwendal</span></h1>
         <p>Étudiant en BTS SIO spécialisé en réseaux & infrastructures, passionné par l’IT.</p>
       </div>
     </section>
 
-    <!-- À PROPOS -->
     <section id="about">
       <h2>À propos</h2>
       <p>
@@ -49,21 +42,17 @@
       </p>
     </section>
 
-    <!-- COMPÉTENCES -->
     <section id="skills">
       <h2>Compétences</h2>
 
       <div class="skill-description">
         <p>
           Avec des bases solides en informatique, j'ai acquis des compétences variées en 
-          programmation, systèmes d'exploitation, bases de données et sécurité. Mon alternance 
-          m'a permis de me spécialiser dans les réseaux, en développant des compétences en gestion,
-          configuration et optimisation d’infrastructures. J'ai travaillé sur des environnements Cisco
-          et Junos, ce qui me rend polyvalent et efficace dans divers contextes techniques.
+          programmation, systèmes d'exploitation, bases de données et sécurité...
         </p>
       </div>
 
-      <h3>Skills</h3>
+      <h3>Skills techniques</h3>
       <ul class="skill-list">
         <li>HTML / CSS / JavaScript</li>
         <li>Python, PHP, SQL</li>
@@ -74,7 +63,6 @@
 
   </section>
 
-  
 
   <!-- ONGLET PROJETS -->
   <section id="tab-entreprise" class="tab">
@@ -113,20 +101,18 @@
   </section>
 
 
-
-  <!-- ONGLET CV -->
-<section id="tab-cv" class="tab">
+  <!-- CV -->
+  <section id="tab-cv" class="tab">
     <h2>Mon CV</h2>
 
-    <img src="assets/cv_gwendal.png" 
-       alt="CV de Gwendal Casazza"
-       class="cv-image">
+    <img src="assets/cv_gwendal.png"
+         alt="CV de Gwendal Casazza"
+         class="cv-image">
 
     <p style="margin-top:1em;">
       <a class="btn" href="assets/CV_Gwendal.pdf" download>Télécharger mon CV</a>
     </p>
   </section>
-
 
 
   <!-- ONGLET VEILLE TECHNO -->
@@ -154,77 +140,47 @@
     </div>
   </section>
 
-
-
-  <!-- CONTACT GLOBAL -->
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>📧 <a href="mailto:gwendal@example.com">gwendalcasazza@gmail.com</a></p>
-    <p>💼 <a href="https://www.linkedin.com/in/gwendal-casazza-33501b2b4/" target="_blank">LinkedIn</a></p>
+    <p>📧 <a href="mailto:gwendal@example.com">gwendal@example.com</a></p>
+    <p>💼 <a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
   </section>
 
 
+  <!-- SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.tab');
+      const buttons = document.querySelectorAll('[data-tab]');
 
-  <!-- JAVASCRIPT POUR LES ONGLES -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.tab');
-    const buttons = document.querySelectorAll('[data-tab]');
-
-    function showTab(target) {
-      tabs.forEach(tab => tab.classList.remove('active'));
-      const el = document.getElementById(`tab-${target}`);
-      if (el) {
-        el.classList.add('active');
+      function showTab(target) {
+        tabs.forEach(tab => tab.classList.remove('active'));
+        document.getElementById(`tab-${target}`).classList.add('active');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
-    }
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault(); // au cas où il y ait un href plus tard
-        const target = btn.getAttribute('data-tab');
-        showTab(target);
+      buttons.forEach(btn => {
+        btn.addEventListener('click', e => {
+          e.preventDefault();
+          const target = btn.getAttribute("data-tab");
+          showTab(target);
+        });
+      });
+
+      // Charger flux RSS
+      document.querySelector('[data-tab="veille"]').addEventListener("click", async () => {
+        const apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://www.cert.ssi.gouv.fr/feed/";
+        const res = await fetch(apiUrl);
+        const data = await res.json();
+        const container = document.getElementById("rss-feed");
+        container.innerHTML = "";
+        data.items.slice(0,5).forEach(i=>{
+          container.innerHTML += `<p><a href="${i.link}" target="_blank">${i.title}</a></p>`;
+        });
       });
     });
-  });
-</script>
-
-<script>
-  async function loadRSS() {
-    const rssUrl = "https://www.cert.ssi.gouv.fr/feed/"; // mets ton flux ici
-    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-
-      const container = document.getElementById("rss-feed");
-      container.innerHTML = ""; // reset
-
-      data.items.slice(0, 5).forEach(item => {
-        const article = document.createElement("div");
-        article.classList.add("rss-item");
-
-        article.innerHTML = `
-          <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
-          <p>${item.pubDate.split(" ")[0]}</p>
-        `;
-
-        container.appendChild(article);
-      });
-
-    } catch (error) {
-      document.getElementById("rss-feed").innerHTML =
-        "<p>Impossible de charger le flux RSS.</p>";
-    }
-  }
-
-  // Charge le flux quand on ouvre l’onglet Veille
-  document.querySelector('[data-tab="veille"]').addEventListener("click", () => {
-    loadRSS();
-  });
-</script>
+  </script>
 
 </body>
 </html>

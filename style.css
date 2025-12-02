@@ -28,50 +28,18 @@ body {
 
 a {
   color: var(--accent-blue);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+a:hover {
+  text-shadow: 0 0 5px var(--accent-blue);
 }
 
 h1, h2, h3 {
   color: var(--title-color);
 }
 
-/* ----------------------
-    HERO
--------------------------*/
-.hero {
-  background: linear-gradient(to right, var(--accent-red), var(--accent-red-light));
-  color: white;
-  text-align: center;
-  padding: 8em 2em;
-}
-
-.hero-content h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.5em;
-}
-
-.hero-content p {
-  font-size: 1.2em;
-  margin-bottom: 1.5em;
-}
-
-.accent {
-  color: black;
-}
-
-/* Bouton */
-.btn {
-  background: var(--accent-red);
-  color: white;
-  padding: 0.8em 1.5em;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: var(--accent-red-light);
-}
 
 /* ----------------------
     NAVIGATION STICKY
@@ -95,15 +63,16 @@ h1, h2, h3 {
 
 .nav-bar a {
   color: white;
-  text-decoration: none;
   font-weight: bold;
+  cursor: pointer;
+  user-select: none;
 }
 
 .nav-bar a:hover {
-  color: var(--accent-red-light); /* rouge clair */
-  text-shadow: 0 0 8px var(--accent-red-light);
-  transition: 0.2s ease-in-out;
+  color: var(--accent-red-light);
+  text-shadow: 0 0 6px var(--accent-red-light);
 }
+
 
 /* ----------------------
     SECTIONS
@@ -114,8 +83,72 @@ section {
   margin: 1em;
   border-radius: 8px;
   border: 1px solid var(--border-color);
-  box-shadow: none;
 }
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+
+/* ----------------------
+    HERO
+-------------------------*/
+.hero {
+  background: linear-gradient(to right, var(--accent-red), var(--accent-red-light));
+  color: white;
+  text-align: center;
+  padding: 8em 2em;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+}
+
+.accent {
+  color: black;
+}
+
+
+/* ----------------------
+    BUTTON
+-------------------------*/
+.btn {
+  background: var(--accent-red);
+  color: white;
+  padding: 0.8em 1.5em;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--accent-red-light);
+  box-shadow: 0 0 10px var(--accent-red-light);
+}
+
+
+/* ----------------------
+    LISTES COMPÉTENCES
+-------------------------*/
+.skill-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skill-list li {
+  margin-bottom: 0.5em;
+}
+
 
 /* ----------------------
     PROJETS
@@ -137,28 +170,36 @@ section {
 
 .project-card:hover {
   transform: translateY(-5px);
-  border-color: var(--accent-blue);
+  border-color: var(--accent-red-light);
+  box-shadow: 0 0 10px rgba(180, 12, 12, 0.5);
 }
 
-/* ------------------------------------------------------------------
-Centrage du CV seulement quand l'onglet CV est actif 
-------------------------------------------------------------------*/
-#tab-cv.tab.active {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* vertical */
-  align-items: center;       /* horizontal */
-  min-height: 100vh;
-  text-align: center;
-}
 
-/* Image du CV */
+/* ----------------------
+    CV IMG DISPLAY
+-------------------------*/
 .cv-image {
+  display: block;
+  margin: auto;
   width: 70%;
   height: auto;
   border-radius: 8px;
-  margin-top: 1em;
 }
+
+
+/* ----------------------
+    RSS FEED LINKS
+-------------------------*/
+#rss-feed a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#rss-feed a:hover {
+  color: var(--accent-red-light);
+  text-shadow: 0 0 5px var(--accent-red-light);
+}
+
 
 /* ----------------------
     RESPONSIVE
@@ -177,38 +218,8 @@ Centrage du CV seulement quand l'onglet CV est actif
   .hero-content h1 {
     font-size: 1.8em;
   }
-}
 
-/* ----------------------
-    ONGLET / TABS
--------------------------*/
-.tab {
-  display: none;
-}
-
-.tab.active {
-  display: block;
-}
-
-.nav-bar a {
-  user-select: none; /* impossible de sélectionner le texte */
-  cursor: pointer;   /* curseur type “lien” */
-}
-
-.rss-item {
-  background: var(--dark-bg);
-  padding: 1em;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-  margin-bottom: 1em;
-}
-
-.rss-item h3 a {
-  color: var(--accent-blue);
-  text-decoration: none;
-}
-
-.rss-item h3 a:hover {
-  color: var(--accent-red-light);
-  text-shadow: 0 0 6px var(--accent-red-light);
+  .cv-image {
+    width: 95%;
+  }
 }
