@@ -173,8 +173,8 @@
         const data = await res.json();
         const container = document.getElementById("rss-feed");
         container.innerHTML = "";
-        data.items.filter(i => i.title.toLowerCase().includes("obsolescence") || i.title.toLowerCase().includes("deprecated").slice(0,5).forEach(i=>{
-          container.innerHTML += `<p><a href="${i.link}" target="_blank" rel="noopener noreferrer">${i.title}</a></p>`;
+        data.items.slice(0,5).forEach(i=>{
+          container.innerHTML += `<p><a href="${i.link}" target="_blank">${i.title}</a></p>`;
         });
       });
     });
