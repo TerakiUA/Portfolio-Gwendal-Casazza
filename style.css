@@ -212,3 +212,40 @@ Centrage du CV seulement quand l'onglet CV est actif
   color: var(--accent-red-light);
   text-shadow: 0 0 6px var(--accent-red-light);
 }
+
+/* --- NAV BAR WITH LOGO --- */
+
+.nav-bar nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5em;
+}
+
+.nav-left {
+  display: flex;
+  gap: 2em;
+  list-style: none;
+  margin: 0;
+  padding: 1em 0;
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+  filter: brightness(0) invert(1); /* Rend le logo blanc si il est noir */
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.nav-logo:hover {
+  filter: drop-shadow(0 0 6px var(--accent-red-light));
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .nav-bar nav {
+    flex-direction: column;
+    gap: 1em;
+  }
+}
