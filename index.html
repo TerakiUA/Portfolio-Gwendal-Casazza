@@ -3,182 +3,316 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Gwendal Casazza</title>
+  <title>Portfolio — Gwendal Casazza</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+  <!-- ── NAVBAR ─────────────────────────────────────────── -->
   <header class="nav-bar">
-    <nav>
-      <ul>
-        <li><a href="#" data-tab="home">Accueil</a></li>
-        <li><a href="#" data-tab="projects">Projets</a></li>
-        <li><a href="#" data-tab="cv">CV</a></li>
-        <li><a href="#" data-tab="veille">Veille</a></li>
-      </ul>
-    </nav>
+    <div class="nav-inner">
+      <span class="nav-logo">GC<span class="dot">.</span></span>
+      <nav>
+        <ul>
+          <li><a href="#" data-tab="home">Accueil</a></li>
+          <li><a href="#" data-tab="projects">Projets</a></li>
+          <li><a href="#" data-tab="cv">CV</a></li>
+          <li><a href="#" data-tab="veille">Veille</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
 
-  <!-- ACCUEIL -->
-  <section id="tab-home" class="tab active">
+  <!-- ── ACCUEIL ────────────────────────────────────────── -->
+  <div id="tab-home" class="tab active">
 
     <section class="hero">
       <div class="hero-content">
-        <h1>Bienvenue, sur mon <span class="accent">Portfolio</span></h1>
-        <p>Je suis étudiant en BTS SIO option SISR spécialisé en réseaux & infrastructures, passionné par l’IT.</p>
+        <p class="hero-eyebrow">BTS SIO · Option SISR</p>
+        <h1>Gwendal <span class="accent">Casazza</span></h1>
+        <p class="hero-sub">Étudiant en alternance · Réseaux & Infrastructures · Free Pro</p>
+        <div class="hero-actions">
+          <a href="#" class="btn" data-tab="projects">Voir mes projets</a>
+          <a href="#" class="btn btn-outline" data-tab="cv">Mon CV</a>
+        </div>
       </div>
     </section>
 
-    <section id="about">
-      <h2>À propos</h2>
-      <p>
-        Étudiant en BTS SIO option SISR, passionné par les réseaux, l’infrastructure
-        et la cybersécurité. Mon alternance et ma curiosité mon permis d’acquérir des compétences solides
-        en réseaux, systèmes, virtualisation, équipements Cisco et Junos, et en résolution de problèmes techniques.
-      </p>
-    </section>
+    <div class="content-grid">
 
-    <section id="skills">
-      <h2>Compétences</h2>
-
-      <div class="skill-description">
+      <section class="card" id="about">
+        <span class="card-num">01</span>
+        <h2>À propos</h2>
         <p>
-          Avec des bases solides en informatique, j'ai acquis des compétences variées en 
-          réseaux, programmation, systèmes, bases de données et sécurité.
-          Ce qui m'a permis d'avoir un certain niveau techniques sur plusieurs domaines :
+          Étudiant en BTS SIO option SISR, passionné par les réseaux, l'infrastructure
+          et la cybersécurité. Mon alternance chez <strong>Free Pro</strong> et ma curiosité
+          m'ont permis d'acquérir des compétences solides en réseaux, systèmes, virtualisation,
+          équipements Cisco et Junos, ainsi qu'en résolution de problèmes techniques.
         </p>
-      </div>
+      </section>
 
-      <h3>Skills techniques</h3>
-      <ul class="skill-list">
-        <li>HTML / CSS / JavaScript</li>
-        <li>Python, PHP, SQL</li>
-        <li>Git, Linux</li>
-        <li>Proxmox, Junos, Cisco</li>
-      </ul>
-    </section>
+      <section class="card" id="skills">
+        <span class="card-num">02</span>
+        <h2>Compétences</h2>
+        <p>Des compétences variées acquises en formation et en entreprise, couvrant plusieurs domaines clés :</p>
 
-  </section>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3 class="skill-group-title">Réseaux & Infra</h3>
+            <div class="tags">
+              <span class="tag">Cisco IOS</span>
+              <span class="tag">Junos</span>
+              <span class="tag">VLAN / OSPF</span>
+              <span class="tag">BGP</span>
+              <span class="tag">SNMP</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title">Systèmes & Virtualisation</h3>
+            <div class="tags">
+              <span class="tag">Linux</span>
+              <span class="tag">Proxmox</span>
+              <span class="tag">Windows Server</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title">Développement</h3>
+            <div class="tags">
+              <span class="tag">HTML / CSS / JS</span>
+              <span class="tag">Python</span>
+              <span class="tag">PHP</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title">Outils & Automatisation</h3>
+            <div class="tags">
+              <span class="tag">Git</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">Ansible</span>
+              <span class="tag">NetShot</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-
-  <!-- ONGLET PROJETS -->
-  <section id="tab-projects" class="tab">
-      <h2>Mon Entreprise</h2>
+      <section class="card" id="company">
+        <span class="card-num">03</span>
+        <h2>Mon entreprise — Free Pro</h2>
         <p>
-          Free Pro répond aux besoins télécoms, IT et cloud des entreprises de toutes tailles, de la
-          TPE au grand groupe, en proposant des offres fixes et mobiles simples, ultra-performantes,
-          ainsi que des solutions XPR adaptées aux enjeux complexes.
-          Expert en connectivité et gestion des données depuis plus de 20 ans, Free Pro assure la 
-          collecte, le transport, la sécurisation et l’hébergement des données, garantissant leur 
-          disponibilité et intégrité. Avec un service client de proximité et une forte orientation 
-          humaine, Free Pro établit une relation de confiance avec ses clients partout en France.
+          Free Pro répond aux besoins télécoms, IT et cloud des entreprises de toutes tailles,
+          de la TPE au grand groupe, en proposant des offres fixes et mobiles ultra-performantes,
+          ainsi que des solutions adaptées aux enjeux complexes.
         </p>
+        <p>
+          Expert en connectivité et gestion des données depuis plus de 20 ans, Free Pro assure
+          la collecte, le transport, la sécurisation et l'hébergement des données, en garantissant
+          leur disponibilité et leur intégrité. Avec un service client de proximité et une forte
+          orientation humaine, Free Pro établit une relation de confiance avec ses clients
+          partout en France.
+        </p>
+      </section>
+
+    </div>
+
+    <footer id="contact">
+      <div class="contact-inner">
+        <span class="contact-label">Contact</span>
+        <div class="contact-links">
+          <a href="mailto:gwendalcasazza@gmail.com" class="contact-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            gwendalcasazza@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/VOTRE-PROFIL" target="_blank" class="contact-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <!-- ── PROJETS ────────────────────────────────────────── -->
+  <div id="tab-projects" class="tab">
+
+    <div class="content-grid">
+
+      <section class="card">
+        <span class="card-num">Projets</span>
+        <h2>Mes réalisations</h2>
+        <p>Projets menés en formation et en entreprise dans le cadre du BTS SIO SISR.</p>
+      </section>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-tag">Infra · Automatisation</span>
+            <h3>Solution Terransible</h3>
+          </div>
+          <p>Déploiement automatisé d'une infrastructure locale à l'aide de <strong>Terraform</strong> et <strong>Ansible</strong>. Ce projet visait à automatiser le provisionnement de machines virtuelles sous Proxmox, de la configuration réseau jusqu'à l'installation des services.</p>
+          <div class="project-stack">
+            <span class="tag">Terraform</span>
+            <span class="tag">Ansible</span>
+            <span class="tag">Proxmox</span>
+            <span class="tag">Linux</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-tag">Web · Développement</span>
+            <h3>Portfolio BTS SIO</h3>
+          </div>
+          <p>Conception et développement d'un site web portfolio responsive en <strong>HTML / CSS / JavaScript</strong>, présentant mes compétences, projets et veille technologique dans le cadre de l'épreuve E5 du BTS SIO.</p>
+          <div class="project-stack">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">GitHub Pages</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-tag">Entreprise · Documentation</span>
+            <h3>Documentation Technique</h3>
+          </div>
+          <p>Rédaction de plusieurs documents techniques pour <strong>Free Pro</strong> : procédures d'exploitation, guides de configuration réseau et comptes rendus d'interventions, destinés aux équipes opérationnelles.</p>
+          <div class="project-stack">
+            <span class="tag">Rédaction technique</span>
+            <span class="tag">Cisco</span>
+            <span class="tag">Junos</span>
+          </div>
+        </article>
+
       </div>
 
-    <h3>Mes Projets</h3>
+    </div>
+  </div>
 
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Solution Terransible</h3>
-        <p>Déploiement automatique d'une infrastructure local non sécurisé.</p>
-      </div>
 
-      <div class="project-card">
-        <h3>Portfolio</h3>
-        <p>Site web responsive en HTML/CSS pour mon BTS SIO.</p>
-      </div>
-
-      <div class="project-card">
-        <h3>Documentation Entreprise</h3>
-        <p>Rédaction de plusieurs documents pour l'entreprise.</p>
+  <!-- ── CV ─────────────────────────────────────────────── -->
+  <div id="tab-cv" class="tab">
+    <div class="content-grid">
+      <section class="card">
+        <span class="card-num">CV</span>
+        <h2>Curriculum Vitæ</h2>
+        <p>Étudiant en BTS SIO SISR en alternance chez Free Pro.</p>
+        <a class="btn" href="assets/cv_gwendal.png" download style="margin-top:1.2em;display:inline-block;">Télécharger le CV</a>
+      </section>
+      <div class="cv-wrapper">
+        <img src="assets/cv_gwendal.png" alt="CV de Gwendal Casazza" class="cv-image">
       </div>
     </div>
-  </section>
+  </div>
 
 
-  <!-- CV -->
-  <section id="tab-cv" class="tab">
-    <h1>Mon CV</h1>
+  <!-- ── VEILLE ─────────────────────────────────────────── -->
+  <div id="tab-veille" class="tab">
+    <div class="content-grid">
 
-    <img src="assets/cv_gwendal.png"
-         alt="CV de Gwendal Casazza"
-         class="cv-image">
+      <section class="card">
+        <span class="card-num">Veille</span>
+        <h2>Veille technologique</h2>
+        <p>
+          La veille technologique est une démarche permettant de suivre régulièrement l'évolution
+          des outils, technologies, normes et pratiques du domaine informatique. Dans le cadre
+          du BTS SIO SISR, elle concerne notamment la cybersécurité, les systèmes d'exploitation
+          serveurs, la virtualisation, le cloud, les équipements réseau et les solutions de supervision.
+        </p>
+        <p>
+          Elle consiste à rechercher, trier et analyser des informations provenant de sources
+          fiables : sites spécialisés, blogs techniques, documentations officielles ou conférences.
+          Pour être efficace, elle s'appuie sur des outils comme les flux RSS, les alertes
+          automatisées ou les plateformes de suivi. Mes sources principales sont les <strong>flux RSS</strong>,
+          <strong>X (Twitter)</strong> et <strong>Reddit</strong>.
+        </p>
+      </section>
 
-    <p style="margin-top:1em;">
-      <a class="btn" href="assets/cv_gwendal.png" download>Télécharger mon CV</a>
-    </p>
-  </section>
+      <section class="card">
+        <span class="card-num">Sujet</span>
+        <h2>Automatisation de la gestion des équipements réseau et lutte contre l'obsolescence grâce à NetShot</h2>
+        <p>
+          Ma veille porte sur un outil utilisé en interne chez Free Pro. Sans pouvoir détailler
+          pleinement l'outil interne ICE — dédié à l'industrialisation de l'activité réseau —
+          il est important de mentionner que <strong>NetShot</strong>, un outil open-source, y est greffé.
+        </p>
+        <p>
+          NetShot permet de sauvegarder automatiquement les configurations des équipements,
+          d'en tenir un inventaire à jour et de détecter des failles d'obsolescence au sein
+          du parc réseau. La problématique centrale est celle de l'obsolescence de certains
+          équipements, qui peut entrer en conflit avec des protocoles comme <strong>SNMP</strong>,
+          dont les versions évoluent régulièrement.
+        </p>
+        <p>
+          Chez Free Pro, dans le cadre d'une démarche RSE, le retour des équipements en fin
+          de vie est une priorité. Cela peut cependant poser des difficultés selon l'ancienneté
+          du matériel concerné.
+        </p>
+      </section>
 
+      <section class="card">
+        <span class="card-num">Actualités</span>
+        <h2>Articles récents — CERT-FR</h2>
+        <div id="rss-feed">
+          <p class="loading-text">Chargement des articles...</p>
+        </div>
+      </section>
 
-  <!-- ONGLET VEILLE TECHNO -->
-  <section id="tab-veille" class="tab">
-        <h1>Qu'est ce qu'une veille technologique :</h1>
-    <p>Une veille technologique est une démarche permettant de suivre de manière régulière l’évolution des outils, technologies, normes et pratiques du domaine informatique.
-       Dans un BTS SIO option SISR, elle concerne notamment la cybersécurité, les systèmes d’exploitation serveurs, la virtualisation, le cloud, les équipements réseau ou encore les solutions de supervision.
-       Elle consiste à rechercher, trier et analyser des informations provenant de sources fiables comme des sites spécialisés, blogs techniques, documentations officielles ou conférences.
-       Cette veille permet d’identifier des innovations, anticiper les changements technologiques et repérer des mises à jour importantes ou des failles de sécurité.
-       Elle aide aussi à comparer des solutions et à évaluer leur pertinence dans un contexte professionnel.
-       Pour être efficace, elle doit être organisée à l’aide d’outils comme les flux RSS, alertes automatisées ou plateformes de suivi.</p>
-
-    <h1>Veille technologique :</h1>
-    <h2>Automatisation de la gestion des équipements réseau et lutte contre l’obsolescence grâce à Netshot</h2>
-
-    <p>J’effectue ma vieille technologique via différents moyens, les principalaux sont par Flux RSS, X et beaucoup sur Reddit.
-       Ma veille technologique portant sur un outil interne à Free, l'explication approfondie de ICE n'est pas possible mais pour expliquer simplement cette outil sert à l'industrialisation de notre activité, sur cela un outil open-source nommé NetShot est gréfé dessus.
-       NetShot permet de sauvegarder automatiquement les configurations, inventorier les équipements et de detecter des failles d'obsolescence au sein du parc.
-       La problématique est celle l'obsolescence des versions de certain equipements qui se confrontent avec des protocoles tels que le SNMP qui ont des mis à jour de leurs version.
-       A mon entreprise dû à des démarches RSE, le retour d'équipements est une priorité qui peut parfois suivant l'ancienneté de l'équipement posé soucis.</p>
-
-    <h3>Voici les articles récents de ma veille techno :</h3>
-    <div id="rss-feed">
-      <p>Chargement des articles...</p>
     </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:gwendalcasazza@gmail.com">Mail</a></p>
-    <p>💼 <a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
-  </section>
+  </div>
 
 
-  <!-- SCRIPT -->
+  <!-- ── SCRIPT ─────────────────────────────────────────── -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const tabs = document.querySelectorAll('.tab');
-      const buttons = document.querySelectorAll('[data-tab]');
+    const tabs    = document.querySelectorAll('.tab');
+    const buttons = document.querySelectorAll('[data-tab]');
+    let veilleLoaded = false;
 
-      function showTab(target) {
-        tabs.forEach(tab => tab.classList.remove('active'));
-        document.getElementById(`tab-${target}`).classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    function showTab(target) {
+      tabs.forEach(t => t.classList.remove('active'));
+      document.getElementById(`tab-${target}`).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (target === 'veille' && !veilleLoaded) {
+        loadRSS();
+        veilleLoaded = true;
       }
+    }
 
-      buttons.forEach(btn => {
-        btn.addEventListener('click', e => {
-          e.preventDefault();
-          const target = btn.getAttribute("data-tab");
-          showTab(target);
-        });
-      });
-
-      // Charger flux RSS
-      document.querySelector('[data-tab="veille"]').addEventListener("click", async () => {
-        const apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://www.cert.ssi.gouv.fr/feed/";
-        const res = await fetch(apiUrl);
-        const data = await res.json();
-        const container = document.getElementById("rss-feed");
-        container.innerHTML = "";
-        data.items.slice(0,5).forEach(i=>{
-          container.innerHTML += `<p><a href="${i.link}" target="_blank">${i.title}</a></p>`;
-        });
+    buttons.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        showTab(btn.getAttribute('data-tab'));
       });
     });
+
+    async function loadRSS() {
+      const container = document.getElementById('rss-feed');
+      try {
+        const res  = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.cert.ssi.gouv.fr/feed/');
+        const data = await res.json();
+        container.innerHTML = '';
+        data.items.slice(0, 6).forEach(item => {
+          const date = new Date(item.pubDate).toLocaleDateString('fr-FR', { day:'2-digit', month:'short', year:'numeric' });
+          container.innerHTML += `
+            <a href="${item.link}" target="_blank" class="rss-item">
+              <span class="rss-date">${date}</span>
+              <span class="rss-title">${item.title}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>`;
+        });
+      } catch {
+        container.innerHTML = '<p class="loading-text">Impossible de charger les articles. Vérifiez votre connexion.</p>';
+      }
+    }
   </script>
 
 </body>
